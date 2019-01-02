@@ -12,6 +12,8 @@
     <%- include('./_partials/nav.ejs')%>    
     <%= users[0].name %>
     <%= users[0].ID %>    
+    <h2></h2>
+    <script>window.localStorage.setItem("username", "<%= users[0].name %>");</script>
 
     <script src="javascripts/main.js"></script>
 </body>
