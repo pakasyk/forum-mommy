@@ -9,7 +9,16 @@
     
 </head>
 <body>
-    <%- include('./_partials/nav.ejs')%>    
+    <%- include('./_partials/nav.ejs')%>   
+    
+    <form action="/users/create" method="POST" name="myForm">
+        <input type="text" name="username" placeholder="John Doe">
+        <input type="password" name="password" placeholder="">
+        
+        
+        <button type="submit">Send</button>
+        <button type="reset">Reset</button>
+    </form>
 
     <script src="javascripts/main.js"></script>
 </body>

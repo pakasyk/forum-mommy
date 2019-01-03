@@ -10,8 +10,15 @@
 </head>
 <body>
     <%- include('./_partials/nav.ejs')%>    
-    <%= users[0].name %>
-    <%= users[0].ID %>    
+    <%= message %>
+    <form action="/users/login" method="POST" name="myForm">
+        <input type="text" name="username" placeholder="John Doe">
+        <input type="password" name="password" placeholder="">
+        
+        
+        <button type="submit">Send</button>
+        <button type="reset">Reset</button>
+    </form>
     <h2></h2>
     <script>window.localStorage.setItem("username", "<%= users[0].name %>");</script>
 
