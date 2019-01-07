@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+const querystring = require('querystring');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -14,7 +15,10 @@ router.post('/create', (req, res) => {
   usersArray.forEach(user => {
     if (user.username == req.body.username){
       console.log(`${user.username} already exsists`);
-      res.send(`${user.username} already exsists`);
+      // res.send(`${user.username} already exsists`);
+      
+      //res.render('register', { title: "title" });
+      res.redirect('/login');
 
     }
   });
@@ -33,7 +37,13 @@ router.post('/login', (req, res) => {
     console.log(user);
     console.log(user.username, req.body.username);
     if (user.username == req.body.username && user.password == req.body.password){
-      res.redirect('/');
+
+      const query = querystring.stringify({
+        "valid":"your string here"
+    });
+   
+    res.redirect('/?' + query);
+     
     } 
      
     
